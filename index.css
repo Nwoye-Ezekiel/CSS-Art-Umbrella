@@ -1,0 +1,232 @@
+:root {
+  --red: #e51837;
+  --white: #fff;
+}
+
+@font-face {
+  font-family: tesla;
+  src: url("./tesla.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: tesla;
+  font-weight: 400;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 250px;
+  height: 170px;
+  transform: scale(1.5);
+}
+
+.ellipse {
+  border-radius: 50%;
+}
+
+.outer-ellipse {
+  position: relative;
+  overflow: hidden;
+  width: 252.38px;
+  height: 130.09px;
+}
+
+.outer-ellipse > .ellipse {
+  position: absolute;
+  top: -69.76px;
+  width: 106.68px;
+  height: 122.29px;
+  border: var(--red) 2px solid;
+  background: var(--red);
+}
+
+.outer-ellipse > .ellipse:nth-child(1) {
+  left: 37.73px;
+}
+
+.outer-ellipse > .ellipse:nth-child(2) {
+  right: 37.73px;
+}
+
+.inner-ellipse {
+  position: absolute;
+  top: 10.41px;
+  width: 239.37px;
+  height: 130.09px;
+  background: var(--white);
+}
+
+.innermost-ellipse {
+  position: absolute;
+  overflow: hidden;
+  top: 15.61px;
+  width: 205.55px;
+  height: 94.97px;
+}
+
+.innermost-ellipse > .ellipse {
+  position: absolute;
+  background: var(--red);
+  height: 108.93px;
+  width: 104px;
+  top: -73.67px;
+}
+
+.innermost-ellipse > .ellipse:nth-child(1) {
+  left: 15.5px;
+}
+
+.innermost-ellipse > .ellipse:nth-child(2) {
+  right: 15.5px;
+}
+
+.inverted-triangle {
+  position: absolute;
+  transform: rotate(180deg);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.top-inverted-triangle {
+  top: 14px;
+  z-index: 1;
+  width: 33.82px;
+  height: 22.5px;
+  background-color: var(--white);
+}
+
+.bottom-curve > .ellipse {
+  position: absolute;
+  background-color: var(--white);
+}
+
+.bottom-curve > .ellipse:nth-child(1) {
+  top: 38.24px;
+  width: 19px;
+  height: 21px;
+}
+
+.bottom-curve > .ellipse:nth-child(2) {
+  top: 35px;
+  width: 46px;
+  height: 14px;
+}
+
+.bottom-curve > .ellipse:nth-child(3) {
+  top: 40px;
+  width: 46px;
+  height: 14px;
+}
+
+.left-bottom-curve > .ellipse:nth-child(1) {
+  left: 72.69px;
+}
+
+.left-bottom-curve > .ellipse:nth-child(2) {
+  left: 76px;
+}
+
+.left-bottom-curve > .ellipse:nth-child(3) {
+  left: 75px;
+}
+
+.right-bottom-curve > .ellipse:nth-child(1) {
+  right: 72.69px;
+}
+
+.right-bottom-curve > .ellipse:nth-child(2) {
+  right: 76px;
+}
+
+.right-bottom-curve > .ellipse:nth-child(3) {
+  right: 75px;
+}
+
+.bottom-inverted-triangle {
+  top: 34.12px;
+  width: 45.53px;
+  height: 130.44px;
+  background-color: var(--red);
+}
+
+.logo-name {
+  visibility: hidden;
+  font-size: 50px;
+  margin-top: 60px;
+  letter-spacing: 10px;
+  color: var(--red);
+  animation: show 1s 1.5s ease forwards, fade-in 1s 1.5s ease;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(1) rotate(40deg);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1.3) rotate(0deg);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-30px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes show {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
