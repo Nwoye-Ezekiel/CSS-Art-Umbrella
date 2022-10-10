@@ -6,4 +6,4 @@ View Live [Here](https://nwoye-ezekiel.github.io/CSS-Art-Tesla-Logo/)
 
 ### Reference Image
 
-![Tesla-Logo](/Tesla-Logo.png)
+![Tesla-Logo](/Tesla-Logo.webp)
