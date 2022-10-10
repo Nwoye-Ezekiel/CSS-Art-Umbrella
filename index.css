@@ -44,6 +44,7 @@ body {
   width: 250px;
   height: 170px;
   transform: scale(1.5);
+  animation: zoom-in 1s ease;
 }
 
 .ellipse {
@@ -55,6 +56,9 @@ body {
   overflow: hidden;
   width: 252.38px;
   height: 130.09px;
+  border-radius: 0%;
+  transform: translateY(15px);
+  animation: slide-up 0.7s 0.5s ease forwards, bend 1s 1.5s ease forwards;
 }
 
 .outer-ellipse > .ellipse {
@@ -62,8 +66,8 @@ body {
   top: -69.76px;
   width: 106.68px;
   height: 122.29px;
-  border: var(--red) 2px solid;
   background: var(--red);
+  border: var(--red) 2px solid;
 }
 
 .outer-ellipse > .ellipse:nth-child(1) {
@@ -80,6 +84,8 @@ body {
   width: 239.37px;
   height: 130.09px;
   background: var(--white);
+  border-radius: 0%;
+  animation: bend 1s 1.5s ease forwards;
 }
 
 .innermost-ellipse {
@@ -88,6 +94,8 @@ body {
   top: 15.61px;
   width: 205.55px;
   height: 94.97px;
+  border-radius: 0%;
+  animation: bend 1s 1.5s ease forwards;
 }
 
 .innermost-ellipse > .ellipse {
@@ -116,13 +124,14 @@ body {
   top: 14px;
   z-index: 1;
   width: 33.82px;
-  height: 22.5px;
   background-color: var(--white);
+  animation: short-grow 1s 1.6s ease forwards;
 }
 
 .bottom-curve > .ellipse {
   position: absolute;
   background-color: var(--white);
+  animation: slide-up 0.6s ease;
 }
 
 .bottom-curve > .ellipse:nth-child(1) {
@@ -180,7 +189,19 @@ body {
   margin-top: 60px;
   letter-spacing: 10px;
   color: var(--red);
-  animation: show 1s 1.5s ease forwards, fade-in 1s 1.5s ease;
+  animation: show 1.5s 1.8s ease forwards, fade-in 1.5s 1.8s ease;
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1.5);
+  }
 }
 
 @keyframes fade-in {
@@ -192,33 +213,30 @@ body {
   }
 }
 
-@keyframes zoom-in {
+@keyframes slide-up {
   0% {
-    transform: scale(1) rotate(40deg);
-  }
-  50% {
-    transform: scale(1.5);
+    transform: translateY(15px);
   }
   100% {
-    transform: scale(1.3) rotate(0deg);
+    transform: translateY(0);
   }
 }
 
-@keyframes slide-right {
+@keyframes bend {
   0% {
-    transform: translateX(-30px);
+    border-radius: 0%;
   }
   100% {
-    transform: translateX(0);
+    border-radius: 50%;
   }
 }
 
-@keyframes slide-left {
+@keyframes short-grow {
   0% {
-    transform: translateX(40px);
+    height: 0;
   }
   100% {
-    transform: translateX(0);
+    height: 22.5px;
   }
 }
 
