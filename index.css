@@ -1,12 +1,12 @@
 :root {
-  --white-color: #fff;
-  --rib-color: #353837;
-  --inner-panel: #3a413f;
-  --black-color: #2a302e;
-  --brown-color: #815137;
-  --dark-gray-color: #4c5452;
-  --dark-green-color: #2d3331;
-  --inner-panel-reflection: #464e4d;
+  --white: #fff;
+  --rib: #353837;
+  --black: #2a302e;
+  --dark-gray: #4c5452;
+  --light-gray: #5f6664;
+  --lightening: #464e4d;
+  --inner-canopy: #3a413f;
+  --outer-canopy: #2d3331;
 }
 
 * {
@@ -53,9 +53,9 @@ body {
 .end-top .unit1 {
   width: 2px;
   height: 7px;
+  background: var(--black);
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
-  background-color: var(--black-color);
 }
 
 .end-top .unit2 {
@@ -63,15 +63,15 @@ body {
   height: 9px;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
-  background-color: var(--brown-color);
+  background: var(--dark-gray);
 }
 
 .end-top .unit3 {
   width: 8px;
   height: 3px;
+  background: var(--black);
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
-  background-color: var(--black-color);
 }
 
 .canopy-container {
@@ -89,8 +89,8 @@ body {
   border-radius: 50%;
   background: linear-gradient(
     90deg,
-    var(--dark-gray-color) 0%,
-    var(--dark-green-color) 100%
+    var(--dark-gray) 0%,
+    var(--outer-canopy) 100%
   );
 }
 
@@ -105,8 +105,8 @@ body {
   transform: translateX(-50%);
   background: linear-gradient(
     90deg,
-    var(--dark-gray-color) 0%,
-    var(--dark-green-color) 100%
+    var(--dark-gray) 0%,
+    var(--outer-canopy) 100%
   );
 }
 
@@ -118,7 +118,7 @@ body {
   overflow: hidden;
   position: absolute;
   border-radius: 50%;
-  background: var(--inner-panel);
+  background: var(--inner-canopy);
 }
 
 .rib1 {
@@ -129,7 +129,7 @@ body {
   height: 265px;
   position: absolute;
   border-radius: 50%;
-  border: var(--rib-color) 0.5px solid;
+  border: var(--rib) 0.5px solid;
 }
 
 .outer-canopy-curves .curve2 {
@@ -144,8 +144,8 @@ body {
   transform: translateX(-50%);
   background: radial-gradient(
     circle,
-    var(--inner-panel-reflection) 0%,
-    var(--inner-panel) 80%
+    var(--lightening) 0%,
+    var(--inner-canopy) 80%
   );
 }
 
@@ -157,7 +157,7 @@ body {
   position: absolute;
   border-radius: 50%;
   transform: translateX(-50%);
-  border: var(--rib-color) 0.5px solid;
+  border: var(--rib) 0.5px solid;
 }
 
 .outer-canopy-curves .curve3 {
@@ -168,7 +168,7 @@ body {
   overflow: hidden;
   position: absolute;
   border-radius: 50%;
-  background: var(--inner-panel);
+  background: var(--inner-canopy);
 }
 
 .rib4 {
@@ -179,7 +179,7 @@ body {
   height: 265px;
   position: absolute;
   border-radius: 50%;
-  border: var(--rib-color) 0.5px solid;
+  border: var(--rib) 0.5px solid;
 }
 
 .inner-canopy-curves .curve1 {
@@ -190,7 +190,7 @@ body {
   height: 27.22px;
   position: absolute;
   border-radius: 50%;
-  background: var(--white-color);
+  background: var(--white);
 }
 
 .inner-canopy-curves .curve2 {
@@ -201,7 +201,7 @@ body {
   height: 27.22px;
   position: absolute;
   border-radius: 50%;
-  background: var(--white-color);
+  background: var(--white);
 }
 
 .inner-canopy-curves .curve3 {
@@ -212,8 +212,8 @@ body {
   height: 27.22px;
   position: absolute;
   border-radius: 50%;
+  background: var(--white);
   transform: translateX(-50%);
-  background: var(--white-color);
 }
 
 .inner-canopy-curves .curve4 {
@@ -224,7 +224,7 @@ body {
   height: 27.22px;
   position: absolute;
   border-radius: 50%;
-  background: var(--white-color);
+  background: var(--white);
 }
 
 .inner-canopy-curves .curve5 {
@@ -235,7 +235,7 @@ body {
   height: 27.22px;
   position: absolute;
   border-radius: 50%;
-  background: var(--white-color);
+  background: var(--white);
 }
 
 .overlay {
@@ -245,7 +245,7 @@ body {
   z-index: 30;
   height: 100%;
   position: absolute;
-  background: var(--white-color);
+  background: var(--white);
 }
 
 .frame-components {
@@ -259,18 +259,18 @@ body {
 }
 
 .runner {
-  width: 7.5px;
   height: 7px;
+  width: 7.5px;
+  background: var(--black);
   border-bottom-left-radius: 1.5px;
   border-bottom-right-radius: 1.5px;
-  background-color: var(--black-color);
 }
 
 .shaft {
   width: 3.5px;
   height: 150px;
   position: relative;
-  background-color: var(--black-color);
+  background: var(--black);
 }
 
 .top-spring {
@@ -282,47 +282,48 @@ body {
   border-top: 3px solid transparent;
   transform: rotate(-35deg) scale(-1);
   border-bottom: 3px solid transparent;
-  border-right: 4px solid var(--black-color);
+  border-right: 4px solid var(--black);
 }
 
 .bottom-spring {
   width: 0;
   height: 0;
-  bottom: 9px;
+  bottom: 10px;
   right: -0.5px;
   position: absolute;
   transform: rotate(-35deg);
   border-top: 3px solid transparent;
   border-bottom: 3px solid transparent;
-  border-right: 4px solid var(--black-color);
+  border-right: 4px solid var(--black);
 }
 
 .open-close-button {
   width: 3px;
-  right: -1px;
   height: 4px;
   bottom: 4px;
   z-index: -1;
+  right: -1.5px;
   position: absolute;
+  background: var(--dark-gray);
   border-top-right-radius: 0.5px;
   border-bottom-right-radius: 0.5px;
-  background-color: var(--brown-color);
 }
 
 .handle-ring {
-  width: 7.5px;
   height: 5px;
+  width: 7.5px;
+  border: transparent;
+  background: var(--light-gray);
   border-top-left-radius: 1.5px;
   border-top-right-radius: 1.5px;
-  background-color: var(--black-color);
 }
 
 .handle {
   width: 7.5px;
   height: 25px;
+  background: var(--black);
   border-bottom-left-radius: 1.5px;
   border-bottom-right-radius: 1.5px;
-  background-color: var(--brown-color);
 }
 
 @keyframes fall {
