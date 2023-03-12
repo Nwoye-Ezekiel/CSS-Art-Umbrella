@@ -302,7 +302,7 @@ body {
   height: 4px;
   bottom: 4px;
   z-index: -1;
-  right: -1.5px;
+  right: -1px;
   position: absolute;
   background: var(--dark-gray);
   border-top-right-radius: 0.5px;
