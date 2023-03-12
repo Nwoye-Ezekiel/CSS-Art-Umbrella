@@ -35,6 +35,7 @@ body {
   overflow: hidden;
   position: relative;
   align-items: center;
+  transform: scale(1.1);
   flex-direction: column;
   justify-content: center;
   animation: fall 3s cubic-bezier(0.6, 0.4, 0.4, 1) forwards;
@@ -328,9 +329,16 @@ body {
 
 @keyframes fall {
   0% {
-    transform: translate(50vw, -50vh) rotate(-360deg) scale(0.5);
+    transform: translate(50vw, -50vh) rotate(-360deg) scale(0.3);
+  }
+  80% {
+    transform: translate(0, 0) rotate(0) scale(1.1);
+  }
+  90% {
+    transform: translate(0, 0) rotate(0) scale(1.1);
+    animation-timing-function: ease-out;
   }
   100% {
-    transform: translate(0, 0) rotate(0) scale(1.2);
+    transform: translate(0, 0) rotate(0) scale(1);
   }
 }
